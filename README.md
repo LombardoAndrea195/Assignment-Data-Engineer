@@ -12,7 +12,7 @@ The main task is to develop a data system able to monitor custom metrics:
 * Return the total number of events to a specific event type for a given offset. The offset determines how much time we want to look forward i.e., an offset of 10 means we count only the events which have been created in the next 10 seconds.
 
 ## Architecture
-How we could see from the bottom architecture image presented following C4 model[link](https://c4model.com/) we will have two main actors:
+How we could see from the bottom architecture image presented following C4 model [link](https://c4model.com/) we will have two main actors:
 * one responsible for flushing information as a producer in the correct input topic. This person we have assume is internal at data system
 * one who is simulated the client that did the API GET REST.This user will be outside at the data system.
 In particular data is taken from the following REST API [link](https://api.github.com/events) that records all events.
@@ -68,18 +68,18 @@ In order to analyze the correct works we need to follow the rules:
 * run the different GET to a specific
 ## Available REST API
 ####  WatchEvent REST API
-* [Time_window_after](http://127.0.0.1:5000/WatchEvent/minutes/lazy/<int:minutes>) http://127.0.0.1:5000/WatchEvent/minutes/lazy/<int:minutes>
-* [Time_window_behind](http://127.0.0.1:5000/WatchEvent/minutes/<int:minutes>) http://127.0.0.1:5000/WatchEvent/minutes/<int:minutes>
+* [Time_window_after](http://127.0.0.1:8080/WatchEvent/minutes/lazy/<int:minutes>) http://127.0.0.1:8080/WatchEvent/minutes/lazy/<int:minutes>
+* [Time_window_behind](http://127.0.0.1:8080/WatchEvent/minutes/<int:minutes>) http://127.0.0.1:8080/WatchEvent/minutes/<int:minutes>
 ####  PullRequestEvent REST API
-* [Time_window_after](http://127.0.0.1:5000/PullRequestEvent/minutes/lazy/<int:minutes>) http://127.0.0.1:5000/PullRequestEvent/minutes/lazy/<int:minutes>
-* [Time_window_behind](http://127.0.0.1:5000/PullRequestEvent/minutes/<int:minutes>) http://127.0.0.1:5000/PullRequestEvent/minutes/<int:minutes>
-* [average_time](http://127.0.0.1:5000/PullRequestEvent/repository_id/<int:repository_id>) http://127.0.0.1:5000/PullRequestEvent/repository_id/<int:repository_id>
+* [Time_window_after](http://127.0.0.1:8080/PullRequestEvent/minutes/lazy/<int:minutes>) http://127.0.0.1:8080/PullRequestEvent/minutes/lazy/<int:minutes>
+* [Time_window_behind](http://127.0.0.1:5000/PullRequestEvent/minutes/<int:minutes>) http://127.0.0.1:8080/PullRequestEvent/minutes/<int:minutes>
+* [average_time](http://127.0.0.1:8080/PullRequestEvent/repository_id/<int:repository_id>) http://127.0.0.1:8080/PullRequestEvent/repository_id/<int:repository_id>
 ####  IssuesEvent REST API
-* [Time_window_after](http://127.0.0.1:5000/IssuesEvent/minutes/lazy/<int:minutes>) http://127.0.0.1:5000/IssuesEvent/minutes/lazy/<int:minutes>
-* [Time_window_behind](http://127.0.0.1:5000/IssuesEvent/minutes/<int:minutes>) http://127.0.0.1:5000/IssuesEvent/minutes/<int:minutes>
+* [Time_window_after](http://127.0.0.1:8080/IssuesEvent/minutes/lazy/<int:minutes>) http://127.0.0.1:8080/IssuesEvent/minutes/lazy/<int:minutes>
+* [Time_window_behind](http://127.0.0.1:8080/IssuesEvent/minutes/<int:minutes>) http://127.0.0.1:8080/IssuesEvent/minutes/<int:minutes>
 ## Next works
 * Create new metrics
 * Insert a storaging 
 * create a dashboard for monitoring infrastructure
 ## License
-[MIT](https://choosealicense.com/licenses/mit/)
+Andrea Lombardo
